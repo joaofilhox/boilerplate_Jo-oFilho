@@ -10,17 +10,5 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
 
-  app:
-    build: .
-    volumes:
-      - .:/app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mysql
-    environment:
-      DATABASE_URL: mysql://root:root@mysql:3306/meucrud
-    command: npm run dev
-
 volumes:
   mysql-data:
